@@ -36,7 +36,6 @@ jobs:
         with:
           cache-key: ${{ matrix.os }}-${{ hashFiles('esy.lock/index.json') }}
           esy-prefix: .esy
-      - run: esy make install -C '#{self.target_dir}'
       - run: |
           esy echo "::set-output name=bindir::#{self.install / 'bin'}"
           esy echo "::set-output name=share::#{self.install / 'share'}"

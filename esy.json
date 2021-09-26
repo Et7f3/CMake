@@ -13,9 +13,7 @@
         },
         "build": [
             "./bootstrap --verbose --parallel=4 --prefix=#{self.install}",
-            "make -j4 -C '#{self.target_dir}'"
-        ],
-        "install": [
+            "make -j4 -C '#{self.target_dir}'",
             "make install -C '#{self.target_dir}'"
         ]
     },
