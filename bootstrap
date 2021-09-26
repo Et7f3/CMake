@@ -53,7 +53,7 @@ cmake_toupper()
 cmake_system=`uname`
 cmake_source_dir=`cd "\`dirname \"$0\"\`";pwd`
 cd "$cur__target_dir"
-cmake_binary_dir="$cur__target_dir"
+cmake_binary_dir=`pwd`
 
 if ${UNAME_OVERRIDE}; then
   cmake_binary_dir="$(cygpath -m "${cmake_binary_dir}")"
