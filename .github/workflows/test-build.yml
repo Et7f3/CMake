@@ -36,3 +36,14 @@ jobs:
         with:
           cache-key: ${{ matrix.os }}-${{ hashFiles('esy.lock/index.json') }}
           esy-prefix: .esy
+      - run: |
+          esy echo "::set-output name=bindir::#{self.install / 'bin'}"
+          esy echo "::set-output name=share::#{self.install / 'share'}"
+          esy echo "::set-output name=share::#{os}"
+        id: config
+        if: ${{ matrix.os }} == "ubuntu-latest"
+      - name: Upload binary
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: ${{ os }}
+          path: ${{ steps.config.outputs.bindir }}
