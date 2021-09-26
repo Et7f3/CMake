@@ -52,7 +52,7 @@ cmake_toupper()
 # Detect system and directory information.
 cmake_system=`uname`
 cmake_source_dir=`cd "\`dirname \"$0\"\`";pwd`
-cmake_binary_dir=`pwd`
+cmake_binary_dir="$cur__target_dir"
 
 if ${UNAME_OVERRIDE}; then
   cmake_binary_dir="$(cygpath -m "${cmake_binary_dir}")"
