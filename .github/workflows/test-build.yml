@@ -45,5 +45,5 @@ jobs:
       - name: Upload binary
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: ${{ os }}
+          name: ${{ matrix.os }}-bin
           path: ${{ steps.config.outputs.bindir }}
