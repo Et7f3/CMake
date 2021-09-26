@@ -3,7 +3,6 @@
     "version": "3.21.2",
     "description": "cmake-3.21.2 packaged for esy",
     "esy": {
-        "buildsInSource": true,
         "exportedEnv": {},
         "buildEnv": {
             "UNAME_OVERRIDE": "#{os == 'windows'}",
